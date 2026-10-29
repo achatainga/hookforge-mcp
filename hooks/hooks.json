@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "hooks": [
+    {
+      "event": "PreToolUse",
+      "matcher": {
+        "tool": "run_command",
+        "pattern": "(curl|fetch|http).*webhook"
+      },
+      "action": {
+        "type": "verify_hmac_header",
+        "instruction": "Enforce valid HMAC signing headers (e.g. stripe-signature, x-hub-signature-256) before invoking local webhook test endpoints to avoid 400/401 rejects."
+      }
+    },
+    {
+      "event": "PostToolUse",
+      "matcher": {
+        "tool": "inject_race_condition"
+      },
+      "action": {
+        "type": "audit_idempotency_response",
+        "instruction": "Verify that twin webhook payloads resulted in exactly ONE success (200/201) and ONE idempotent skip (200 OK with duplicate notice or 409 Conflict), with zero duplicate DB records."
+      }
+    }
+  ]
+}
