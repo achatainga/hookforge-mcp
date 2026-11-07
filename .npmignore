@@ -1,0 +1,7 @@
+tests/
+*.log
+.git/
+.github/
+*.tmp
+*.zip
+.DS_Store
