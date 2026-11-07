@@ -19,5 +19,8 @@
     "ai-agents",
     "developer-tools",
     "guardrails"
-  ]
+  ],
+  "bin": {
+    "hookforge-mcp": "./bin/cli.mjs"
+  }
 }
