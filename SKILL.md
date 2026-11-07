@@ -1,5 +1,5 @@
 ---
-name: hookforge-mcp
+name: hookforge
 description: Deterministic Webhook & Event Replay Sandbox with Zero-Leak HMAC Signing and Race Injection for AI Coding Agents.
 version: 1.0.0
 tags:
