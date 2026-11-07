@@ -1,6 +1,6 @@
 {
   "name": "@achatainga/hookforge-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deterministic Webhook & Event Replay Engine with Cryptographic Signatures and Race Injection",
   "type": "module",
   "main": "src/engine.mjs",
